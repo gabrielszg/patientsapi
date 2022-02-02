@@ -1,0 +1,12 @@
+2022-02-02 13:04:52 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "'1,96' (PATIENT: ""ALTURA"" DOUBLE NOT NULL)"; SQL statement:
+insert into patient (altura, bairro, celular, cep, cidade, cor, data_nasc, email, endereco, estado, idade, mae, nome, numero, pai, peso, rg, senha, sexo, signo, telefone_fixo, tipo_sanguineo, cpf) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) [22018-200]
+2022-02-02 13:55:58 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT * FROM PATIENT
+SELECT[*] ALTURA FROM PATIENT"; SQL statement:
+SELECT * FROM PATIENT
+SELECT ALTURA FROM PATIENT [42000-200]
+2022-02-02 13:56:50 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "Alexandre Caleb Costa"; SQL statement:
+SELECT ALTURA FROM PATIENT
+WHERE NOME [22018-200]
