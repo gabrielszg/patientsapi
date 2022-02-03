@@ -48,7 +48,7 @@ public class PatientController {
 	public ResponseEntity<Optional<Patient>> getById(@PathVariable String nome) {
 		Optional<Patient> patient;
 		try {
-			patient = patientRepository.findById(nome);
+			patient = patientRepository.findByNomeStartingWith(nome);
 			return new ResponseEntity<Optional<Patient>>(patient, HttpStatus.OK);
 		}catch (NoSuchElementException nsee) {
 			return new ResponseEntity<Optional<Patient>>(HttpStatus.NOT_FOUND);

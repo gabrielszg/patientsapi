@@ -14,18 +14,18 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class IndiceCardiaco {
+public class CardiacIndex {
 	
 	@Id
-	@Column(name = "data")
-	private String data;
-	
-	@Column(name = "cpf")
+	@Column(name = "cpf", length = 14)
 	private String cpf;
 	
-	@Column(name = "epoc")
-	private int epoc;
+	@Column(name = "epoc", length = 10)
+	private Long epoc;
 	
-	@Column(name = "ind_card")
+	@Column(name = "ind_card", length = 8)
 	private String ind_card;
+	
+	@Column(length = 2)
+	private char crlf;
 }
