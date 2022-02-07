@@ -250,3 +250,19 @@ SELECT NAME FROM PATIENT [42122-200]
 2022-02-03 16:54:24 jdbc[13]: exception
 org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "Alexandre Caleb Costa"; SQL statement:
 SELECT NOME AND IDADE FROM PATIENT [22018-200]
+2022-02-04 12:06:39 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "USE BANCO
+GO[*]
+
+BULK INSERT CARDIAC_INDEX
+FROM 'C:\workspace\eclipse\patientsapi\dados\indice_cardiaco\12032021.txt'
+GO"; SQL statement:
+USE BANCO
+GO
+
+BULK INSERT CARDIAC_INDEX
+FROM 'C:\workspace\eclipse\patientsapi\dados\indice_cardiaco\12032021.txt'
+GO [42000-200]
+2022-02-04 12:08:39 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CPF[*]"; expected "COMMIT, CREATE, CALL, CHECKPOINT, COMMENT"; SQL statement:
+CPF [42001-200]

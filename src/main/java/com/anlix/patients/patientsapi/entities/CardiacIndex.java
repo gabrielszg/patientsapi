@@ -7,25 +7,24 @@ import javax.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 @Entity
 @Data
 @Builder
+@EqualsAndHashCode
 @NoArgsConstructor
 @AllArgsConstructor
-public class CardiacIndex {
-	
+public class CardiacIndex{
+
 	@Id
-	@Column(name = "cpf", length = 14)
+	@Column(name = "cpf")
 	private String cpf;
 	
-	@Column(name = "epoc", length = 10)
-	private Long epoc;
+	@Column(name = "epoc")
+	private String epoc;
 	
-	@Column(name = "ind_card", length = 8)
+	@Column(name = "ind_card")
 	private String ind_card;
-	
-	@Column(length = 2)
-	private char crlf;
 }

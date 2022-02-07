@@ -9,5 +9,6 @@ import com.anlix.patients.patientsapi.entities.Patient;
 //Interface que extende a interface JpaRepository para utilização de seus métodos em outras classes
 public interface PatientRepository extends JpaRepository<Patient, String> {
 	
+	//Busca pacientes pelo primeiro nome
 	Optional<Patient> findByNomeStartingWith(String nome);
 }
