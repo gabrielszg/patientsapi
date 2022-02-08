@@ -16,15 +16,15 @@ import lombok.NoArgsConstructor;
 @EqualsAndHashCode
 @NoArgsConstructor
 @AllArgsConstructor
-public class CardiacIndex{
-
+public class CardiacIndex {
+	
 	@Id
 	@Column(name = "cpf")
 	private String cpf;
 	
 	@Column(name = "epoc")
-	private String epoc;
+	private int epoc;
 	
 	@Column(name = "ind_card")
-	private String ind_card;
+	private Double ind_card;
 }
