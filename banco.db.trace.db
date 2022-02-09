@@ -538,3 +538,39 @@ GO [42001-200]
 2022-02-08 19:28:22 jdbc[13]: exception
 org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "974.642.524-20"; SQL statement:
 SELECT CPF AND NOME FROM PATIENT [22018-200]
+2022-02-09 15:48:15 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "GO[*]"; expected "GRANT"; SQL statement:
+GO [42001-200]
+2022-02-09 16:30:20 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "GO[*]"; expected "GRANT"; SQL statement:
+GO [42001-200]
+2022-02-09 17:40:48 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "GO[*]"; expected "GRANT"; SQL statement:
+GO [42001-200]
+2022-02-09 17:41:15 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "PATIENT_INDEX_PATIENT" not found; SQL statement:
+DROP TABLE PATIENT_INDEX_PATIENT [42102-200]
+2022-02-09 17:41:15 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "GO[*]"; expected "GRANT"; SQL statement:
+GO [42001-200]
+2022-02-09 17:41:40 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "GO[*]"; expected "GRANT"; SQL statement:
+GO [42001-200]
+2022-02-09 17:43:52 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "GO[*]"; expected "GRANT"; SQL statement:
+GO [42001-200]
+2022-02-09 17:50:15 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CARDIAC_INDEX_PATIENT" not found; SQL statement:
+select patient0_.cardiac_index_cpf as cardiac_1_1_0_, patient0_.patient_nome as patient_2_1_0_, patient1_.nome as nome1_2_1_, patient1_.altura as altura2_2_1_, patient1_.bairro as bairro3_2_1_, patient1_.celular as celular4_2_1_, patient1_.cep as cep5_2_1_, patient1_.cidade as cidade6_2_1_, patient1_.cor as cor7_2_1_, patient1_.cpf as cpf8_2_1_, patient1_.data_nasc as data_nas9_2_1_, patient1_.email as email10_2_1_, patient1_.endereco as enderec11_2_1_, patient1_.estado as estado12_2_1_, patient1_.idade as idade13_2_1_, patient1_.mae as mae14_2_1_, patient1_.numero as numero15_2_1_, patient1_.pai as pai16_2_1_, patient1_.peso as peso17_2_1_, patient1_.rg as rg18_2_1_, patient1_.senha as senha19_2_1_, patient1_.sexo as sexo20_2_1_, patient1_.signo as signo21_2_1_, patient1_.telefone_fixo as telefon22_2_1_, patient1_.tipo_sanguineo as tipo_sa23_2_1_ from cardiac_index_patient patient0_ inner join patient patient1_ on patient0_.patient_nome=patient1_.nome where patient0_.cardiac_index_cpf=? [42102-200]
+2022-02-09 18:19:37 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "GO[*]"; expected "GRANT"; SQL statement:
+GO [42001-200]
+2022-02-09 18:20:23 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "GO[*]"; expected "GRANT"; SQL statement:
+GO [42001-200]
+2022-02-09 18:20:59 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "PATIENT_CARDIAC" not found; SQL statement:
+select cardiac0_.patient_nome as patient_1_2_0_, cardiac0_.cardiac_cpf as cardiac_2_2_0_, cardiacind1_.cpf as cpf1_0_1_, cardiacind1_.data as data2_0_1_, cardiacind1_.epoc as epoc3_0_1_, cardiacind1_.ind_card as ind_card4_0_1_ from patient_cardiac cardiac0_ inner join cardiac_index cardiacind1_ on cardiac0_.cardiac_cpf=cardiacind1_.cpf where cardiac0_.patient_nome=? [42102-200]
+2022-02-09 18:21:03 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "PATIENT_CARDIAC" not found; SQL statement:
+select cardiac0_.patient_nome as patient_1_2_0_, cardiac0_.cardiac_cpf as cardiac_2_2_0_, cardiacind1_.cpf as cpf1_0_1_, cardiacind1_.data as data2_0_1_, cardiacind1_.epoc as epoc3_0_1_, cardiacind1_.ind_card as ind_card4_0_1_ from patient_cardiac cardiac0_ inner join cardiac_index cardiacind1_ on cardiac0_.cardiac_cpf=cardiacind1_.cpf where cardiac0_.patient_nome=? [42102-200]

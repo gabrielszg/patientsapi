@@ -1,16 +1,38 @@
 <!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz//thymeleaf/layout">
 <head>
     <title>Hospital Web</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <style>
-		h1 {color: green}
-		h4 {color: blue}
-</style>
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"  media="screen,projection"/>
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
 <body>
     <h1>Hospital Web</h1>
-    <h4>Consultar Paciente</h4>
-    <p>Nome <input type="search"> <input type="submit">
+    <form method="get">
+    	<h5>Consultar Paciente</h5>
+    	Nome: <input type="text" value="" name="nome"/> 
+    	<a class="waves-effect waves-light btn">consultar</a>
+    </form>
+    <table>
+    	<thead>
+    		<tr>
+    			<th>Nome</th>
+    			<th>Idade</th>
+    		</tr>
+    	</thead>
+    	<tbody>
+    		<tr th:each="nome: ${patient}">
+    		<td><span th:text="${patient.nome}"></span></td>
+    		<td><span th:text="${patient.idade}"></span></td>
+    	</tr>
+    	</tbody>
+    </table>  
+     <!--JavaScript at end of body for optimized loading-->
+      <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
 </body>
 </html>

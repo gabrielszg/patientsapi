@@ -18,8 +18,8 @@ import lombok.NoArgsConstructor;
 @EqualsAndHashCode
 @NoArgsConstructor
 @AllArgsConstructor
-public class CardiacIndex {
-	
+public class PulmonaryIndex {
+
 	@Column(name = "data")
 	@JsonFormat (shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
 	private String data;
@@ -31,6 +31,6 @@ public class CardiacIndex {
 	@Column(name = "epoc")
 	private int epoc;
 	
-	@Column(name = "ind_card")
-	private double ind_card;
+	@Column(name = "ind_pulm")
+	private double ind_pulm;
 }

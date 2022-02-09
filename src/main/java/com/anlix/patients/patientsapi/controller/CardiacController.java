@@ -25,46 +25,43 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public class CardiacController {
 	
-	 CardiacIndexRepository cardiacIndexRepository;
+	private CardiacIndexRepository cardiacIndexRepository;
 	  
 	//Método POST para inserção dos dados na tabela CardiacIndex do banco de dados H2
-	 @PostMapping 
-	 public ResponseEntity<CardiacIndex> save(@RequestBody List<CardiacIndex> cardiac) { 
-		 	cardiacIndexRepository.saveAll(cardiac);
-			return new ResponseEntity<>(HttpStatus.CREATED); 
-	 }
+	@PostMapping
+	public ResponseEntity<CardiacIndex> save(@RequestBody List<CardiacIndex> cardiac) { 
+		cardiacIndexRepository.saveAll(cardiac);
+		return new ResponseEntity<>(HttpStatus.CREATED); 
+	}
 	 
-	 //Método GET de consulta ao banco de dados que retorna todos os dados complementares dos paciente no Banco de Dados
-	 @GetMapping
-		public ResponseEntity<List<CardiacIndex>> getAll() {
-			List<CardiacIndex> cardiac = new ArrayList<>();
-			cardiac = cardiacIndexRepository.findAll();
-			return new ResponseEntity<>(cardiac, HttpStatus.OK);
+	//Método GET de consulta ao banco de dados que retorna todos os dados complementares dos paciente no Banco de Dados
+	@GetMapping
+	public ResponseEntity<List<CardiacIndex>> getAll() {
+		List<CardiacIndex> cardiac = new ArrayList<>();
+		cardiac = cardiacIndexRepository.findAll();
+		return new ResponseEntity<>(cardiac, HttpStatus.OK);
+	}
+	 
+	//Método GET de consulta ao banco de dados com filtro cpf
+	@GetMapping("/{cpf}")
+	public ResponseEntity<Optional<CardiacIndex>> getById(@PathVariable String cpf) {
+		Optional<CardiacIndex> cardiac;
+		try {
+			cardiac = cardiacIndexRepository.findById(cpf);
+			return new ResponseEntity<Optional<CardiacIndex>>(cardiac, HttpStatus.OK);
+		}catch (NoSuchElementException nsee) {
+			return new ResponseEntity<Optional<CardiacIndex>>(HttpStatus.NOT_FOUND);
 		}
+	}
 	 
-	 	//Método GET de consulta ao banco de dados com filtro cpf
-		@GetMapping("/{cpf}")
-		public ResponseEntity<Optional<CardiacIndex>> getById(@PathVariable String cpf) {
-			Optional<CardiacIndex> cardiac;
-			try {
-				cardiac = cardiacIndexRepository.findById(cpf);
-				return new ResponseEntity<Optional<CardiacIndex>>(cardiac, HttpStatus.OK);
-			}catch (NoSuchElementException nsee) {
-				return new ResponseEntity<Optional<CardiacIndex>>(HttpStatus.NOT_FOUND);
-			}
+	//Método DELETE que deleta todos os dados de indice cardiacao do banco de dados
+	@DeleteMapping("/all")
+	public ResponseEntity<Optional<CardiacIndex>> deleteAll() {
+		try {
+			cardiacIndexRepository.deleteAll();
+			return new ResponseEntity<Optional<CardiacIndex>>(HttpStatus.OK);
+		}catch (NoSuchElementException nsee) {
+			return new ResponseEntity<Optional<CardiacIndex>>(HttpStatus.NO_CONTENT);
 		}
-	 
-	 	//Método DELETE que deleta todos os dados de indice cardiacao do banco de dados
-		@DeleteMapping("/all")
-		public ResponseEntity<Optional<CardiacIndex>> deleteAll() {
-			try {
-				cardiacIndexRepository.deleteAll();
-				return new ResponseEntity<Optional<CardiacIndex>>(HttpStatus.OK);
-			}catch (NoSuchElementException nsee) {
-				return new ResponseEntity<Optional<CardiacIndex>>(HttpStatus.NO_CONTENT);
-			}
-		}
-	 
-	 
-	 	
+	}
 }

@@ -21,13 +21,14 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class Patient {
 	
-	@Id
+	
 	@Column(name = "nome")
 	private String nome;
 	
 	@Column(name = "idade")
 	private int idade;
 	
+	@Id
 	@Column(name = "cpf")
 	private String cpf;
 	
