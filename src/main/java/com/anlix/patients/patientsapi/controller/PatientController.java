@@ -45,7 +45,7 @@ public class PatientController {
 	
 	//Método GET de consulta ao banco de dados com filtro de nome, retornando apenas os dados do devido paciente
 	@GetMapping("/{nome}")
-	public ResponseEntity<Optional<Patient>> getById(@PathVariable String nome) {
+	public ResponseEntity<Optional<Patient>> getByNome(@PathVariable String nome) {
 		Optional<Patient> patient;
 		try {
 			patient = patientRepository.findByNomeStartingWith(nome);

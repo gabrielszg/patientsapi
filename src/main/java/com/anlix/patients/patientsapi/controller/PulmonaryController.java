@@ -21,7 +21,7 @@ import com.anlix.patients.patientsapi.repositories.PulmonaryIndexRepository;
 import lombok.AllArgsConstructor;
 
 @RestController
-@RequestMapping("/api/patient/cardiac/pulmonary")
+@RequestMapping("/api/patient/pulmonary")
 @AllArgsConstructor
 public class PulmonaryController {
 	

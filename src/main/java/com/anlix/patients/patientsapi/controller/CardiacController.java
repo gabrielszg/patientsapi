@@ -26,7 +26,7 @@ import lombok.AllArgsConstructor;
 public class CardiacController {
 	
 	private CardiacIndexRepository cardiacIndexRepository;
-	  
+	
 	//Método POST para inserção dos dados na tabela CardiacIndex do banco de dados H2
 	@PostMapping
 	public ResponseEntity<CardiacIndex> save(@RequestBody List<CardiacIndex> cardiac) { 

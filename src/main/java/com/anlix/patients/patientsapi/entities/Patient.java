@@ -2,12 +2,14 @@ package com.anlix.patients.patientsapi.entities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
@@ -15,12 +17,10 @@ import lombok.NoArgsConstructor;
 //Classe com todas as colunas que irão compor a tabela Patient do Banco de Dados H2
 @Entity
 @Data
-@Builder
 @EqualsAndHashCode
 @NoArgsConstructor
 @AllArgsConstructor
 public class Patient {
-	
 	
 	@Column(name = "nome")
 	private String nome;
@@ -92,4 +92,12 @@ public class Patient {
 	
 	@Column(name = "cor")
 	private String cor;
+	
+	@OneToOne(fetch = FetchType.LAZY, optional=true)
+	@JoinColumn(name = "cpf")
+	private CardiacIndex cardiac;
+	
+	@OneToOne(fetch = FetchType.LAZY, optional=true)
+	@JoinColumn(name = "cpf")
+	private PulmonaryIndex pulmonary;
 }
