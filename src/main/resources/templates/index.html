@@ -7,28 +7,67 @@
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
       <!--Import materialize.css-->
       <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"  media="screen,projection"/>
-
       <!--Let browser know website is optimized for mobile-->
-      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
 <body>
-    <h1>Hospital Web</h1>
-    <form method="get">
-    	<h5>Consultar Paciente</h5>
-    	Nome: <input type="text" value="" name="nome"/> 
-    	<a class="waves-effect waves-light btn">consultar</a>
-    </form>
-    <table>
+	<h1>Hospital Web</h1>
+	<form action="" method="post">
+    	<label>Consultar Paciente por nome</label>
+    	<input name="nomepesquisa">
+    	<input type="submit" value="Buscar" class="waves-effect waves-light btn">
+</form>
+	<h1>Todos os Pacientes</h1>
+	<h3><a class="waves-effect waves-light btn"><i class="material-icons left">add_circle_outline</i>Paciente</a></h3>
+    <table class="container">
     	<thead>
     		<tr>
     			<th>Nome</th>
     			<th>Idade</th>
+    			<th>Cpf</th>
+    			<th>Rg</th>
+    			<th>Data nascimento</th>
+    			<th>Sexo</th>
+    			<th>Signo</th>
+    			<th>Mae</th>
+    			<th>Pai</th>
+    			<th>Email</th>
+    			<th>Senha</th>
+    			<th>Cep</th>
+    			<th>Endereco</th>
+    			<th>Numero</th>
+    			<th>Bairro</th>
+    			<th>Estado</th>
+    			<th>Telefone Fixo</th>
+    			<th>Celular</th>
+    			<th>Altura</th>
+    			<th>Peso</th>
+    			<th>Cor</th>
     		</tr>
     	</thead>
     	<tbody>
-    		<tr th:each="nome: ${patient}">
+    		<tr th:each="patient : ${patients}">
     		<td><span th:text="${patient.nome}"></span></td>
     		<td><span th:text="${patient.idade}"></span></td>
+    		<td><span th:text="${patient.cpf}"></span></td>
+    		<td><span th:text="${patient.rg}"></span></td>
+    		<td><span th:text="${patient.data_nasc}"></span></td>
+    		<td><span th:text="${patient.sexo}"></span></td>
+    		<td><span th:text="${patient.signo}"></span></td>
+    		<td><span th:text="${patient.mae}"></span></td>
+    		<td><span th:text="${patient.pai}"></span></td>
+    		<td><span th:text="${patient.email}"></span></td>
+    		<td><span th:text="${patient.senha}"></span></td>
+    		<td><span th:text="${patient.cep}"></span></td>
+    		<td><span th:text="${patient.endereco}"></span></td>
+    		<td><span th:text="${patient.numero}"></span></td>
+    		<td><span th:text="${patient.bairro}"></span></td>
+    		<td><span th:text="${patient.estado}"></span></td>
+    		<td><span th:text="${patient.telefone_fixo}"></span></td>
+    		<td><span th:text="${patient.celular}"></span></td>
+    		<td><span th:text="${patient.altura}"></span></td>
+    		<td><span th:text="${patient.peso}"></span></td>
+    		<td><span th:text="${patient.cor}"></span></td>
     	</tr>
     	</tbody>
     </table>  
