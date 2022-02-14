@@ -20,6 +20,7 @@ import com.anlix.patients.patientsapi.repositories.CardiacIndexRepository;
 
 import lombok.AllArgsConstructor;
 
+//Faz o controle de todos os dados do indice cardiaco
 @RestController
 @RequestMapping("/api/patient/cardiac")
 @AllArgsConstructor
@@ -34,7 +35,8 @@ public class CardiacController {
 		return new ResponseEntity<>(HttpStatus.CREATED); 
 	}
 	 
-	//Método GET de consulta ao banco de dados que retorna todos os dados complementares dos paciente no Banco de Dados
+	//Método GET de consulta ao banco de dados retornando 
+	//todos os dados complementares dos paciente no Banco de Dados
 	@GetMapping
 	public ResponseEntity<List<CardiacIndex>> getAll() {
 		List<CardiacIndex> cardiac = new ArrayList<>();
@@ -42,7 +44,7 @@ public class CardiacController {
 		return new ResponseEntity<>(cardiac, HttpStatus.OK);
 	}
 	 
-	//Método GET de consulta ao banco de dados com filtro cpf
+	//Método GET de consulta tabela CardiacIndex banco com filtro cpf
 	@GetMapping("/{cpf}")
 	public ResponseEntity<Optional<CardiacIndex>> getById(@PathVariable String cpf) {
 		Optional<CardiacIndex> cardiac;

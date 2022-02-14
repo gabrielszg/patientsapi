@@ -7,15 +7,12 @@ import javax.persistence.Id;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
+//Classe com todas as colunas que irão compor a tabela Patient do Banco de Dados H2
 @Entity
 @Data
-@Builder
-@EqualsAndHashCode
 @NoArgsConstructor
 @AllArgsConstructor
 public class PulmonaryIndex {

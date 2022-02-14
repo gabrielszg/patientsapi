@@ -11,24 +11,26 @@ import com.anlix.patients.patientsapi.repositories.PatientRepository;
 
 import lombok.AllArgsConstructor;
 
+//Classe com todos os métodos para comunicação com a interface Web
+//fazendo a ligação entre o back-end e o front-end
+//busca os arquivos index.html e consult.html contidos na pasta templates
 @Controller
 @AllArgsConstructor
 public class PatientModel {
 
 	private PatientRepository patientRepository;
 	
-	@RequestMapping("/patients")
-	public ModelAndView listPatients() {
+	@RequestMapping("/")
+	public ModelAndView initial() {
 		ModelAndView model = new ModelAndView("index");
-		Iterable<Patient> patients = patientRepository.findAll();
-		model.addObject("patients", patients);
+		model.addObject("patientobj", new Patient());
 		return model;
 	}
 	
-	@PostMapping("/patients")
-	public ModelAndView patientInformation(@RequestParam("nomepesquisa") String nomepesquisa) {
-		ModelAndView model = new ModelAndView("index");
-		model.addObject("patients", patientRepository.findPatientByName(nomepesquisa));
+	@PostMapping("/namepatient")
+	public ModelAndView patientInformation(@RequestParam String nomepesquisa) {
+		ModelAndView model = new ModelAndView("consult");
+		model.addObject("patients", patientRepository.findPatientByName(nomepesquisa).get(0));
 		return model;
 	}
 }

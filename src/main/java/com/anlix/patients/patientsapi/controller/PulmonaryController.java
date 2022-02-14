@@ -20,6 +20,7 @@ import com.anlix.patients.patientsapi.repositories.PulmonaryIndexRepository;
 
 import lombok.AllArgsConstructor;
 
+//Faz o controle de todos os dados do indice pulmonar
 @RestController
 @RequestMapping("/api/patient/pulmonary")
 @AllArgsConstructor
@@ -34,7 +35,8 @@ public class PulmonaryController {
 		return new ResponseEntity<>(HttpStatus.CREATED); 
 	}
     
-    //Método GET de consulta ao banco de dados que retorna todos os dados complementares dos paciente no Banco de Dados
+    //Método GET de consulta ao banco de dados que 
+    //retorna todos os dados complementares dos paciente no Banco de Dados
     @GetMapping
     public ResponseEntity<List<PulmonaryIndex>> getAll() {
     	List<PulmonaryIndex> pulmonary = new ArrayList<>();

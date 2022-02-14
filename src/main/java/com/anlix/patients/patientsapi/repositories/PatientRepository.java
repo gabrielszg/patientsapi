@@ -14,6 +14,7 @@ public interface PatientRepository extends JpaRepository<Patient, String> {
 	//Busca pacientes pelo primeiro nome
 	Optional<Patient> findByNomeStartingWith(String nome);
 	
-	@Query("select p from Patient p where p.nome like %?1%")
+	//Busca pacientes pelo primeiro nome no front-end
+	@Query("select p from Patient p where p.nome like ?1%")
 	List<Patient> findPatientByName(String nome);
 }

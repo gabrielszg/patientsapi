@@ -20,12 +20,14 @@ import com.anlix.patients.patientsapi.repositories.PatientRepository;
 
 import lombok.AllArgsConstructor;
 
+//Faz o controle de todos os dados dos pacientes
 @RestController
 @RequestMapping("/api/patient")
 @AllArgsConstructor
 public class PatientController {
 	
-	//Implementação da interface PatientRepository que extende a interface JpaRepository para utilização de seus métodos
+	//Implementação da interface PatientRepository 
+	//que extende a interface JpaRepository para utilização de seus métodos
 	private PatientRepository patientRepository;
 	
 	//Método POST para inserção dos dados na tabela Patient do banco de dados H2
@@ -35,7 +37,8 @@ public class PatientController {
 		return new ResponseEntity<>(HttpStatus.CREATED);
 	}
 	
-	//Método GET de consulta ao banco de dados que retorna todos os dados de todos os pacientes no Banco de Dados
+	//Método GET de consulta ao banco de dados e
+	//retorna todos os dados de todos os pacientes no Banco de Dados
 	@GetMapping
 	public ResponseEntity<List<Patient>> getAll() {
 		List<Patient> patients = new ArrayList<>();
@@ -43,7 +46,8 @@ public class PatientController {
 		return new ResponseEntity<>(patients, HttpStatus.OK);
 	}
 	
-	//Método GET de consulta ao banco de dados com filtro de nome, retornando apenas os dados do devido paciente
+	//Método GET de consulta ao banco de dados com filtro de nome, 
+	//retornando apenas os dados do devido paciente
 	@GetMapping("/{nome}")
 	public ResponseEntity<Optional<Patient>> getByNome(@PathVariable String nome) {
 		Optional<Patient> patient;
