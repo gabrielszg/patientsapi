@@ -6,7 +6,7 @@
 - Estágio: Finalizado
 - Linguagem de Programação: Java 11 LTS
 - Banco de Dados Relacional: H2 Database
-- Frameworks Back-End: Spring Boot, Spring Web, Spring Data Jpa, Lombok, Hibernate
+- Frameworks Back-End: Spring Boot, Spring Web, Spring Data Jpa, Spring MVC, Lombok, Hibernate
 - Frameworks Front-End: Thymeleaf e Materialize
 
 ### Funções implementadas
@@ -21,19 +21,29 @@ Clone o repositório:
 ```
 https://github.com/gabrielszg/patientsapi
 ```
-
-Faça o download do java:
+Faça o download do OpenJDK 11:
 ```
-https://www.oracle.com/java/technologies/downloads/#java11
+https://adoptium.net/?variant=openjdk11&jvmVariant=hotspot
+```
+Faça o download do Maven:
+```
+https://dlcdn.apache.org/maven/maven-3/3.8.4/binaries/apache-maven-3.8.4-bin.zip
 ```
 Configure as variáveis de ambiente (tutorial):
 ```
-https://mauriciogeneroso.medium.com/configurando-java-4-como-configurar-as-vari%C3%A1veis-java-home-path-e-classpath-no-windows-46040950638f
+https://dicasdejava.com.br/como-instalar-o-maven-no-windows/
 ```
-
-Abra o Prompt de comando na pasta target do projeto e digite:
+Configure o Banco de dados:
+   - Na pasta \src\main\resources localize o arquvivo "application.properties", abra com um editor de texto e altera a seguinte linha:
+ 
+     ```
+     spring.datasource.url=jdbc:h2:file:"coloque o seu diretorio raiz do projeto com /banco.db no final"
+     ```
+   - Salve.
+  
+Abra o Prompt de Comando ou Power Shell na pasta raiz do projeto e digite:
 ```
-java -jar patientsapi-0.0.1-SNAPSHOT.jar
+mvn spring-boot:run
 ```
 Abra o navegador de sua preferência e digite o comando:
 ```
